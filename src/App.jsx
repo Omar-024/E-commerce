@@ -35,7 +35,7 @@ function App() {
   
   let router = createBrowserRouter([
     {path:'/' , element:<Layout/> , children:[
-      {path:'' , element:<ProtectedRoute><Home/></ProtectedRoute>} ,
+      {index:true , element:<ProtectedRoute><Home/></ProtectedRoute>} ,
       {path:'Brand' , element:<ProtectedRoute><Brand/></ProtectedRoute>} ,
       {path:'products' , element:<ProtectedRoute><Products/></ProtectedRoute>} ,
       {path:'detailsproduct/:id/:category' , element:<ProtectedRoute><DetailsProducts/></ProtectedRoute>} ,
