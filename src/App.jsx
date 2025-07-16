@@ -35,7 +35,10 @@ function App() {
   
   let router = createBrowserRouter([
     {path:'/' , element:<Layout/> , children:[
-      {index:true , element:<ProtectedRoute><Home/></ProtectedRoute>} ,
+      {index:true , element:<Login/>} ,
+      {path:"login" , element:<Login/>} ,
+      {path:'register' , element:<Register/>}  ,
+      {path:"home" , element:<ProtectedRoute><Home/></ProtectedRoute>} ,
       {path:'Brand' , element:<ProtectedRoute><Brand/></ProtectedRoute>} ,
       {path:'products' , element:<ProtectedRoute><Products/></ProtectedRoute>} ,
       {path:'detailsproduct/:id/:category' , element:<ProtectedRoute><DetailsProducts/></ProtectedRoute>} ,
@@ -45,8 +48,6 @@ function App() {
       {path:'wishlist' , element:<ProtectedRoute><WhishList/></ProtectedRoute>} ,
       {path:'payment' , element:<ProtectedRoute><Payment/></ProtectedRoute>} ,
       {path:'allorder' , element:<ProtectedRoute><AllOrders/></ProtectedRoute>} ,
-      {path:'login' , element:<Login/>} ,
-      {path:'register' , element:<Register/>}  ,
       {path:'forgetpassword' , element:<ForgetPassword/>} ,
       {path:'verifycode' , element:<VerifyCode/>}  ,
       {path:'resetpassword' , element:<ResetPassword/>}  
