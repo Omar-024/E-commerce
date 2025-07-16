@@ -24,7 +24,7 @@ export default function Layout() {
    <Footer/>
 </div>
  
- npm install gh-pages --save-dev
+
   
   </>
 }

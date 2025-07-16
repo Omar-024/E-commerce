@@ -32,10 +32,14 @@ export default function Footer() {
            <img src={img2} className='w-18  object-cover' alt="" />
            <img src={img3} className='w-18  h-8 object-cover' alt="" />
            </div>
-           <div className='flex items-center gap-4 '>
+           <div className='flex items-center gap-4  '>
                <h3 className='text-xl'> Get deliveries with FreshCart</h3>
-                 <img src={img4} className=' object-cover' alt="" />
-                 <img src={img5} className=' object-cover' alt="" />
+                
+                  <div className='md:flex items-center gap-2'>
+                     <img src={img4} className='pb-1'   alt="" />
+                    <img  src={img5}  alt="" />
+                  </div>
+               
 
            </div>
          </div>
