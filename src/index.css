@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme{
+    --font-nunito:"Nunito", sans-serif
+}
+body{
+    @apply font-nunito
+}
+.btn{
+    @apply px-4 py-2 bg-green-500 hover:bg-green-500/80 transition-colors duration-200 cursor-pointer border rounded-2xl text-white
+}
