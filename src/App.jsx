@@ -34,7 +34,7 @@ function App() {
 
   
   let router = createBrowserRouter([
-    {path:'' , element:<Layout/> , children:[
+    {path:'/' , element:<Layout/> , children:[
       {path:'' , element:<ProtectedRoute><Home/></ProtectedRoute>} ,
       {path:'Brand' , element:<ProtectedRoute><Brand/></ProtectedRoute>} ,
       {path:'products' , element:<ProtectedRoute><Products/></ProtectedRoute>} ,
