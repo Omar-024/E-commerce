@@ -33,7 +33,7 @@ const query = new QueryClient();
 function App() {
 
   
-  let router = createBrowserRouter([
+  let router = createHashRouter([
     {path:'/' , element:<Layout/> , children:[
       {index:true , element:<Login/>} ,
       {path:"login" , element:<Login/>} ,
