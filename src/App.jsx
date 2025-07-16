@@ -35,7 +35,7 @@ function App() {
   
   let router = createHashRouter([
     {path:'/' , element:<Layout/> , children:[
-      {index:true , element:<Home/>} ,
+       {index:true , element:<ProtectedRoute><Home/></ProtectedRoute>} ,
        {path:'login' , element:<Login/>}  ,
       {path:'register' , element:<Register/>}  ,
       {path:'Brand' , element:<ProtectedRoute><Brand/></ProtectedRoute>} ,
