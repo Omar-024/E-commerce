@@ -113,8 +113,12 @@ export default function Login() {
 </div>:null}
  
   <button type="submit" className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 cursor-pointer"> {isloading? <i className="fa-solid fa-spinner fa-spin"></i>: "Login"}  </button>
+
   </form>
 
+  <div className='px-8 my-2 py-4 max-w-md border-gray-300 border-[1px] mx-auto flex justify-center items-center '>
+    <h3>Don’t have an account? <Link className='text-green-500 font-bold' to={'/register'}>SignUp</Link> </h3>
+  </div>
   <Link to={"/forgetpassword"} className='flex justify-end *:underline'>
    <h3 className='hover:text-green-400 transition-all duration-200 text-gray-500 '>Forget your Password?</h3>
   </Link>

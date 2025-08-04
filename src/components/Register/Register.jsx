@@ -6,6 +6,7 @@ import axios from 'axios'
 import * as yup from 'yup'
 import { object, ref, string } from 'yup'
 import { authContext } from '../AuthContextProvider/AuthContextProvider'
+import { Link } from 'react-router-dom'
 
 
 export default function Register() {
@@ -18,18 +19,19 @@ export default function Register() {
      
 
     
-    const handleRegister = async (values)=>{
+    const handleRegister = async (values, { resetForm })=>{
       setisloading(true)
       try {
         console.log(values);
       let res = await axios.post("https://ecommerce.routemisr.com/api/v1/auth/signup" , values)
       console.log(res);
-      localStorage.setItem("token" , res.data.token)
+      // localStorage.setItem("token" , res.data.token)
+      // setToken(res.data.token)
       seterrorMessage(null)
       setsuccessMessage(res.data.message)
       setisloading(false)
       // navigate("/")
-      setToken(res.data.token)
+      
       } catch (error) {
          console.log(error.response.data.message);
          seterrorMessage(error.response.data.message)
@@ -37,6 +39,7 @@ export default function Register() {
          setisloading(false)
          
       }
+      resetForm()
       
     }
   
@@ -74,7 +77,7 @@ export default function Register() {
   {`${successMessage} Login now `}
 </div>:null}
    
-  <form onSubmit={formik.handleSubmit} className="mt-8 max-w-md mx-auto">
+  <form onSubmit={formik.handleSubmit} resetForm className="mt-8 max-w-md mx-auto">
   <div className="relative z-0 w-full mb-5 group">
     <input
     onChange={formik.handleChange}
@@ -136,6 +139,9 @@ export default function Register() {
 </div>:null}
   <button type="submit" className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 cursor-pointer"> {isloading? <i class="fa-solid fa-spinner fa-spin"></i>: "Register"}  </button>
   </form>
+   <div className='px-8 my-2 py-4 max-w-md border-gray-300 border-[1px] mx-auto flex justify-center items-center '>
+    <h3> have an account? <Link className='text-green-500 font-bold' to={'/login'}>Login</Link> </h3>
+  </div>
   
 
   
