@@ -6,7 +6,7 @@ import axios from 'axios'
 import * as yup from 'yup'
 import { object, ref, string } from 'yup'
 import { authContext } from '../AuthContextProvider/AuthContextProvider'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 export default function Register() {
@@ -15,7 +15,7 @@ export default function Register() {
     const [errorMessage, seterrorMessage] = useState(null)
     const [successMessage, setsuccessMessage] = useState(null)
     const [isloading, setisloading] = useState(false)
-    // let navigate = useNavigate()
+    let navigate = useNavigate()
      
 
     
@@ -30,7 +30,10 @@ export default function Register() {
       seterrorMessage(null)
       setsuccessMessage(res.data.message)
       setisloading(false)
-      // navigate("/")
+     
+        
+        navigate("/login")
+      
       
       } catch (error) {
          console.log(error.response.data.message);
