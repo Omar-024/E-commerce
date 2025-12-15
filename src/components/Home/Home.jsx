@@ -5,9 +5,9 @@ import CategorySlider from '../CategorySlider/CategorySlider'
 import MainSlider from '../MainSlider/MainSlider'
 
 export default function Home() {
-  let onsale= "fcd"
+  // let onsale= "fcd"
 
-    const [counter, setcounter] = useState(null)
+    // const [counter, setcounter] = useState(null)
   return <>
   <MainSlider/>
   <div className='my-12' >

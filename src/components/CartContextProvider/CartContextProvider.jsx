@@ -18,7 +18,7 @@ export default function CartContextProvider({children}) {
   
 
 const getCart = async (productId)=>{
-      return   axios.post(`https://ecommerce.routemisr.com/api/v1/cart `, { productId } ,
+      return axios.post(`https://ecommerce.routemisr.com/api/v1/cart `, { productId } ,
     {
       headers:{
          token: token
@@ -113,6 +113,9 @@ const updateCart = (id , count )=>{
 
   })
 }
+
+
+
 
 useEffect( ()=>{
  

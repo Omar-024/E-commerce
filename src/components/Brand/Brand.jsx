@@ -3,19 +3,18 @@ import style from './Brand.module.css'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { BeatLoader } from 'react-spinners'
+import { ref } from 'yup'
 
 export default function Brand() {
 
   const getBrand = async ()=>{
    return  await axios.get(`https://ecommerce.routemisr.com/api/v1/brands`) 
   }
-   let {data , isLoading , Error , isError} =  useQuery({
-     queryKey:["Brands"]  ,
-     queryFn: getBrand,
-     refetchInterval:3000 ,
-     staleTime:2000 ,
-     select: (data)=>data.data.data ,
-     refetchOnWindowFocus:true // لازم الداتا تكو ن stale
+  let {data , isLoading} = useQuery({
+    queryKey:['brands'] ,
+    queryFn: getBrand ,
+    select: (data)=> data.data.data ,
+
   })
   console.log(data);
 

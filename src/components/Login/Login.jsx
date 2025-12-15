@@ -40,8 +40,8 @@ export default function Login() {
       seterrorMessage(null)
       setsuccessMessage(res.data.message)
       setisloading(false)
-      navigate("/")
       setToken(res.data.token)
+      navigate("/")
       } catch (error) {
          console.log(error.response.data.message);
          seterrorMessage(error.response.data.message)
@@ -57,7 +57,6 @@ export default function Login() {
     
       email: string().email("email is invalid").required("email must be required") ,
       password: string().matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/ , "password must be 8 letters at least include capital and small letter").required("password must be required") ,
-     
     })
       
 
@@ -124,8 +123,6 @@ export default function Login() {
   </Link>
   
 
-  
-  
   
   
   

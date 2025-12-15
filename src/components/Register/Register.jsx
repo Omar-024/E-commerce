@@ -10,7 +10,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 
 export default function Register() {
-   let {setToken}= useContext(authContext)
+   let { setToken}= useContext(authContext)
 
     const [errorMessage, seterrorMessage] = useState(null)
     const [successMessage, setsuccessMessage] = useState(null)
